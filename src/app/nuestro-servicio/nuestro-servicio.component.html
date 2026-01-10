@@ -1,0 +1,205 @@
+<header>
+  <img src="logo.png" alt="Logo : IP Soluciones Digitales" (click)="home()" class="logo-click">
+  <nav class="menu">
+  <button class="menu-toggle" (click)="menuAbierto = !menuAbierto">
+    ☰
+  </button>
+
+  <div class="menu-links" [class.abierto]="menuAbierto">
+    <a routerLink="/home"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact:true}"
+       (click)="menuAbierto = false">
+      Inicio
+    </a>
+
+    <a routerLink="/servicio"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact:true}"
+       (click)="menuAbierto = false">
+      Nuestros servicios
+    </a>
+
+    <a routerLink="/quienes_somos"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact:true}"
+       (click)="menuAbierto = false">
+      Quiénes somos
+    </a>
+
+    <a routerLink="/contacto"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact:true}"
+       (click)="menuAbierto = false">
+      Contacto
+    </a>
+  </div>
+</nav>
+
+</header>
+
+<!-- Botón WhatsApp fijo -->
+<a href="https://wa.me/573113443891" class="whatsapp-float" target="_blank"
+  aria-label="Chatea con nosotros por WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+
+<div class="body">
+  <br>
+  <h1>
+    Servicios que prestamos en IP Soluciones Digitales
+  </h1>
+  <section>
+    Con el respaldo de <strong>IP Soluciones Digitales</strong>, moderniza tu negocio y mejora su visibilidad mediante
+    soluciones de alojamiento en la nube. No te quedes en el pasado: el futuro es hoy.
+  </section>
+  <hr>
+
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs justify-content-center">
+
+        <li class="nav-item">
+          <button class="nav-link" [class.active]="activeTab === 'home'" (click)="changeTab('home')">
+            Desarrollo web
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" [class.active]="activeTab === 'services'" (click)="changeTab('services')">
+            Diseño
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" [class.active]="activeTab === 'contact'" (click)="changeTab('contact')">
+            Optimización
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" [class.active]="activeTab === 'mantenimiento'" (click)="changeTab('mantenimiento')">
+            Mantenimiento
+          </button>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="card-body">
+      <div *ngIf="activeTab === 'home'" @tabAnimation class="image-container">
+        <img src="img_desarrollo.png" alt="pantalla con codigo" class="img-servicio">
+
+        <div class="overlay-text">
+          <h5>Desarrollo de sitios web y aplicaciones a la medida, fáciles de usar y adaptadas a tus necesidades.</h5>
+        </div>
+        <br>
+        <strong>¿Qué ofrecemos?</strong>
+        <ul class="lista-redonda">
+          <li>Sitios web de alta calidad para escritorio y moviles desarrollados con las mejores tecnologías.</li>
+          <li>Desarrollo de sitios web utilizando el framework Angular.</li>
+          <li>Implementación de librerías como Bootstrap para crear interfaces modernas y atractivas.</li>
+          <li>Sitios web desarrollados con HTML5, JavaScript y CSS puro.</li>
+          <li>Desarrollo de aplicaciones de escritorio en Python.</li>
+        </ul>
+      </div>
+
+      <div *ngIf="activeTab === 'services'" @tabAnimation class="image-container">
+        <img src="img_diseño.png" alt="Ilustración de diseño gráfico y marca" class="img-servicio">
+
+        <div class="overlay-text">
+          <h5>Diseño de marcas e ilustraciones para tu negocio</h5>
+        </div>
+
+        <br>
+
+        <strong>¿Qué ofrecemos?</strong>
+
+        <ul class="lista-redonda">
+          <li>Creación y diseño de identidad visual para marcas y emprendimientos.</li>
+          <li>Diseño de logotipos profesionales y personalizados.</li>
+          <li>Ilustraciones digitales adaptadas a la imagen de tu negocio.</li>
+          <li>Diseño gráfico para redes sociales, piezas publicitarias y material corporativo.</li>
+          <li>Propuestas visuales modernas que fortalecen la presencia de tu marca.</li>
+        </ul>
+      </div>
+
+
+      <div *ngIf="activeTab === 'contact'" @tabAnimation class="image-container">
+        <img src="img_optimizacion.png" alt="Ilustración sobre optimización de procesos administrativos"
+          class="img-servicio">
+
+        <div class="overlay-text">
+          <h5>Optimización de procesos administrativos</h5>
+        </div>
+
+        <br>
+
+        <strong>¿Qué ofrecemos?</strong>
+
+        <ul class="lista-redonda">
+          <li>Desarrollo de macros en Excel para automatizar la gestión y el análisis de datos.</li>
+          <li>Automatización de reportes y tareas repetitivas en entornos administrativos.</li>
+          <li>Soluciones personalizadas que mejoran la eficiencia y productividad de tu negocio.</li>
+        </ul>
+      </div>
+
+      <div *ngIf="activeTab === 'mantenimiento'" @tabAnimation class="image-container">
+        <img src="img_mantenimiento.png" alt="Ilustración sobre mantenimiento de equipos de cómputo"
+          class="img-servicio">
+
+        <div class="overlay-text">
+          <h5>Mantenimiento de equipos de cómputo de escritorio</h5>
+        </div>
+
+        <br>
+
+        <strong>¿Qué ofrecemos?</strong>
+
+        <ul class="lista-redonda">
+          <li>Limpieza física y mantenimiento preventivo de equipos de escritorio.</li>
+          <li>Aplicación de pasta térmica para mejorar la refrigeración del procesador.</li>
+          <li>Limpieza de archivos temporales y basura del sistema.</li>
+          <li>Diagnóstico y verificación del estado del disco duro.</li>
+          <li>Optimización general del rendimiento del equipo.</li>
+        </ul>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <footer class="video-footer">
+
+    <!-- Video de fondo -->
+    <video class="footer-video" autoplay muted loop playsinline>
+
+      <source src="video_footer.mp4" type="video/mp4">
+
+    </video>
+
+    <!-- Contenido encima del video -->
+    <div class="footer-content container text-center">
+
+      <img src="logo2.png" alt="IP Soluciones Digitales" class="logo_footer">
+
+      <p class="footer-text">
+        © 2026 <strong>IP Soluciones Digitales</strong>. Todos los derechos reservados.
+      </p>
+
+      <p class="footer-social-text">
+        Síguenos en nuestras redes sociales virtuales.
+      </p>
+
+      <div class="footer-social">
+        <i class="bi bi-facebook"></i>
+        <a href="https://wa.me/573113443891" target="_blank" aria-label="Chatea con nosotros por WhatsApp"
+          class="a-social">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <i class="bi bi-instagram"></i>
+      </div>
+
+    </div>
+
+  </footer>
