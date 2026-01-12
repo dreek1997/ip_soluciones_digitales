@@ -8,7 +8,8 @@ import { ContactoComponent } from './contacto/contacto.component';
 export const routes: Routes = [
   {
     path:'',
-    component: PageComponent
+    component: PageComponent,
+    pathMatch: 'full'
   },
   {
     path:'home',
@@ -28,6 +29,7 @@ export const routes: Routes = [
   },
   {
     path:'**',
-    redirectTo: ''
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];

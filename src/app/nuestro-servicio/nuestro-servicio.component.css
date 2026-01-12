@@ -459,29 +459,6 @@ section{
   }
 }
 
-/* ===================== */
-/* RESPONSIVE */
-/* ===================== */
-
-/* ---------- TABLET ---------- */
-@media (max-width: 1024px) {
-
-  header {
-    padding: 15px 25px;
-  }
-
-  header img {
-    max-width: 200px;
-  }
-
-  .carousel-img {
-    max-height: 520px;
-  }
-
-  .logo_footer {
-    max-width: 280px;
-  }
-}
 
 /* ---------- MÓVIL ---------- */
 @media (max-width: 768px) {
@@ -598,7 +575,18 @@ section{
   }
 }
 
+@media (max-width: 768px) {
 
+  header {
+    overflow: visible;
+    z-index: 100;
+  }
 
+  .menu {
+    position: relative;
+  }
 
-
+  .menu-links {
+    z-index: 9999;
+  }
+}

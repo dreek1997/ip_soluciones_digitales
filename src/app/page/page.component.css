@@ -545,4 +545,21 @@ section{
   }
 }
 
+@media (max-width: 768px) {
+
+  header {
+    overflow: visible;
+    z-index: 100;
+  }
+
+  .menu {
+    position: relative;
+  }
+
+  .menu-links {
+    z-index: 9999;
+  }
+}
+
+
 
