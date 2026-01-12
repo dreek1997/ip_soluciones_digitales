@@ -656,16 +656,15 @@ button:disabled {
 
 @media (max-width: 768px) {
   header {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 1000;
 
-    background: #050b1f; /* usa el color real de tu header */
+    background: #050b1f;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   }
 }
+
 
 
 
